@@ -36,15 +36,32 @@ workflow.add_edge(START, "model")
 workflow.add_node("model", call_model)
 
 # Initialize PostgreSQL checkpointer with error handling
-try:
-    checkpointer = PostgresSaver.from_conn_string(DATABASE_URL)
-    checkpointer.setup()  # Create tables if they don't exist
-    app = workflow.compile(checkpointer=checkpointer)
-    print("Database connection successful - using PostgreSQL persistence")
-    USE_DB = True
-except Exception as e:
-    print(f"Database connection failed: {e}")
-    print("Falling back to in-memory storage")
+checkpointer = None
+USE_DB = False
+app = None
+
+if DATABASE_URL:
+    try:
+        # Simple synchronous connection approach
+        import psycopg
+        
+        # Create a connection
+        conn = psycopg.connect(DATABASE_URL)
+        
+        # Create PostgresSaver with the connection
+        checkpointer = PostgresSaver(conn)
+        checkpointer.setup()  # Create tables if they don't exist
+        
+        app = workflow.compile(checkpointer=checkpointer)
+        print("Database connection successful - using PostgreSQL persistence")
+        USE_DB = True
+    except Exception as e:
+        print(f"Database connection failed: {e}")
+        print("Falling back to in-memory storage")
+        app = workflow.compile()  # No checkpointer - non-persistent
+        USE_DB = False
+else:
+    print("No DATABASE_URL provided, using in-memory storage")
     app = workflow.compile()  # No checkpointer - non-persistent
     USE_DB = False
 
@@ -54,7 +71,7 @@ def chat_with_bot(user_message: str, session_id: str = None):
     thread_id = "abc123"
     config = {"configurable": {"thread_id": thread_id}}
     
-    if USE_DB:
+    if USE_DB and app:
         # Try with PostgreSQL database first
         try:
             input_messages = [HumanMessage(content=user_message)]
