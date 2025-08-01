@@ -1,0 +1,70 @@
+Q: How does temperature affect solar panel performance?
+A: As solar panels heat up, their efficiency drops. Most panels lose about 0.4% to 0.5% of output per °C above 25°C. That means if the temperature hits 40°C, you could see a 6%–7% drop in power output — even if sunlight is strong. This is due to increased internal resistance and changes in semiconductor behavior inside the panel.
+
+---
+
+Q: What is irradiance and why does it matter?
+A: Irradiance is the amount of sunlight hitting a surface, measured in watts per square meter (W/m²). More irradiance = more power. Clear midday skies often provide 800–1000 W/m². On cloudy or overcast days, this can fall to 100–300 W/m², drastically reducing output.
+
+---
+
+Q: Why is my predicted power low even though it’s sunny?
+A: Even if it’s bright out, several things can limit output:
+- High panel temperature
+- Thin clouds or haze
+- Soiling (dust, dirt, bird droppings)
+- Shading from trees/buildings
+- Panel tilt or orientation not optimal
+
+Check your system's temperature and cleaning schedule. Also remember: the sun’s position matters — morning/evening sun isn’t as strong as noon sun.
+
+---
+
+Q: What does the predicted power value mean?
+A: This is the estimated power (in kW) your system should be producing under current conditions — based on temperature and sunlight. It’s not total energy over time (that’s kWh), just the instantaneous output. It helps you know what to expect right now.
+
+---
+
+Q: How much power should I expect from my system?
+A: It depends on system size and conditions. Here are rough examples for a 5 kW system:
+- 1000 W/m² @ 25°C → ~4.8–5.0 kW
+- 700 W/m² @ 35°C → ~3.2–3.8 kW
+- 300 W/m² @ 20°C → ~1.0–1.5 kW
+
+Output varies through the day and across seasons. No system hits 100% 24/7 — small losses are normal.
+
+---
+
+Q: How do clouds affect solar panel performance?
+A: Clouds can drop irradiance dramatically. A fully overcast sky might reduce it by 70–90%. But surprisingly, partly cloudy days can cause short bursts of high output due to reflections — called the cloud edge effect.
+
+---
+
+Q: Why is my output suddenly lower than usual?
+A: Check for:
+- Dirty panels (dust, smog, pollen)
+- Shading (new tree growth, neighbor's roof)
+- Inverter issues (check error lights)
+- Loose cables or corrosion
+- High ambient temperatures
+
+Also compare with weather data — low sunlight equals low power, even if it “looks” bright outside.
+
+---
+
+Q: Do I need to clean my panels?
+A: Yes — dirt, dust, bird poop, or smog can cut output by 10–30%. Cleaning once every 3–6 months (or more if you’re in a dusty/polluted area) can keep your output stable. Use soft water and no harsh chemicals.
+
+---
+
+Q: What is the difference between kW and kWh?
+A: kW (kilowatts) = power = how much energy you’re producing right now  
+kWh (kilowatt-hours) = energy = how much you produced over time
+
+Example:  
+If your system produces 3kW for 2 hours → 3kW × 2h = 6 kWh
+
+---
+
+Q: What’s the ideal tilt and direction for panels?
+A: North-facing (in southern hemisphere) or South-facing (in northern hemisphere) is ideal. Tilt should match your latitude for year-round output. For example, if you’re at 30° latitude, tilt the panel at ~30°. Panels that are too flat or too steep lose morning/evening or winter/summer output.

@@ -1,10 +1,18 @@
 import os
 import dotenv
-from langchain.chat_models import init_chat_model
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_openai import AzureChatOpenAI
+from langchain_openai import AzureOpenAIEmbeddings
+from langchain_core.vectorstores import InMemoryVectorStore
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langgraph.graph import START, MessagesState, StateGraph
 from langgraph.checkpoint.postgres import PostgresSaver
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain import hub
+from langchain_core.documents import Document
+from typing_extensions import List, TypedDict
+
 
 dotenv.load_dotenv()
 api_key = os.getenv("api_key")
@@ -13,24 +21,76 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 # Fallback in-memory conversation history (used if database fails)
 conversation_history = []
 
+# Initialize Azure LLM and embeddings for RAG
+llm = AzureChatOpenAI(
+    azure_endpoint=os.getenv("azure_gpt-3.5"),
+    azure_deployment="gpt-35-turbo",
+    api_key=os.getenv("azure_key"),
+    api_version="2024-12-01-preview",
+)
+
+embeddings = AzureOpenAIEmbeddings(
+    azure_endpoint=os.getenv("azure_embed_url"),
+    azure_deployment="text-embedding-3-small",
+    api_key=os.getenv("azure_key"),
+    api_version="2024-02-01",
+)
+
+# Load and process documents for RAG
+loader = TextLoader("static-faq.txt", encoding="utf-8")
+docs = loader.load()
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=800,
+    chunk_overlap=100,
+    separators=["\n\n---\n\n", "\n\n", "\n", " "]
+)
+all_splits = text_splitter.split_documents(docs)
+
+# Create vector store
+vector_store = InMemoryVectorStore(embeddings)
+_ = vector_store.add_documents(documents=all_splits)
+
+# Get RAG prompt
+rag_prompt = hub.pull("rlm/rag-prompt")
+
 prompt_template = ChatPromptTemplate.from_messages([
-    ("system", "You are helpful assistant"),
+    ("system", "You are a helpful assistant specializing in solar power systems. Use the provided context to answer questions accurately. If the context doesn't contain relevant information, provide a general helpful response."),
     MessagesPlaceholder(variable_name="messages"),
 ])
 
-model = init_chat_model(
-    model="gpt-3.5-turbo",
-    model_provider="openai",
-    base_url="https://openrouter.ai/api/v1",
-    api_key=api_key,
-)
+model = llm
 
 workflow = StateGraph(state_schema=MessagesState)
 
 def call_model(state: MessagesState):
-    prompt = prompt_template.invoke(state)
-    response = model.invoke(prompt)
-    return {"messages": response}
+    # Get the latest user message for RAG retrieval
+    latest_message = state["messages"][-1].content if state["messages"] else ""
+    
+    # Retrieve relevant documents
+    retrieved_docs = vector_store.similarity_search(latest_message, k=3)
+    
+    # Format context from retrieved documents
+    context = "\n\n".join(doc.page_content for doc in retrieved_docs)
+    
+    # Create enhanced system message with context
+    enhanced_system_message = f"""You are a helpful assistant specializing in solar power systems. 
+
+Use the following context to answer the user's question:
+
+{context}
+
+If the context contains relevant information, use it to provide an accurate answer. If the context doesn't contain relevant information, provide a general helpful response based on your knowledge."""
+    
+    # Convert to proper message format for Azure OpenAI
+    formatted_messages = [SystemMessage(content=enhanced_system_message)]
+    
+    # Add the conversation messages
+    for msg in state["messages"]:
+        formatted_messages.append(msg)
+    
+    # Get response from LLM
+    response = model.invoke(formatted_messages)
+    return {"messages": [response]}
 
 workflow.add_edge(START, "model")
 workflow.add_node("model", call_model)
