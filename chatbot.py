@@ -1,17 +1,17 @@
 import os
 import dotenv
+import requests
+from datetime import datetime
 from langchain_openai import AzureChatOpenAI
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langgraph.graph import START, MessagesState, StateGraph
 from langgraph.checkpoint.postgres import PostgresSaver
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain import hub
 from langchain_core.documents import Document
-from typing_extensions import List, TypedDict
+
 
 
 dotenv.load_dotenv()
@@ -20,6 +20,67 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Fallback in-memory conversation history (used if database fails)
 conversation_history = []
+
+# Weather API configuration
+WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast?latitude=-7.9797&longitude=112.6304&hourly=temperature_2m,shortwave_radiation&timezone=auto&forecast_days=1"
+
+def fetch_weather_data():
+    """Fetch current weather data from Open-Meteo API"""
+    try:
+        response = requests.get(WEATHER_API_URL)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching weather data: {e}")
+        return None
+
+def format_weather_data(weather_data):
+    """Format weather data into readable text for RAG"""
+    if not weather_data:
+        return "Weather data is currently unavailable."
+    
+    try:
+        # Extract current time and find the closest hour index
+        current_time = datetime.now()
+        hourly_data = weather_data.get('hourly', {})
+        times = hourly_data.get('time', [])
+        temperatures = hourly_data.get('temperature_2m', [])
+        solar_radiation = hourly_data.get('shortwave_radiation', [])
+        
+        # Find current hour index (simplified - takes first available data)
+        current_temp = temperatures[0] if temperatures else "N/A"
+        current_solar = solar_radiation[0] if solar_radiation else "N/A"
+        
+        # Get min/max temperatures for the day
+        min_temp = min(temperatures) if temperatures else "N/A"
+        max_temp = max(temperatures) if temperatures else "N/A"
+        avg_solar = sum(solar_radiation) / len(solar_radiation) if solar_radiation else "N/A"
+        
+        formatted_data = f"""
+CURRENT WEATHER DATA:
+Location: Latitude -7.9797, Longitude 112.6304 (Malang, Indonesia region)
+Current Temperature: {current_temp}°C
+Current Solar Radiation: {current_solar} W/m²
+
+TODAY'S FORECAST:
+Minimum Temperature: {min_temp}°C
+Maximum Temperature: {max_temp}°C
+Average Solar Radiation: {avg_solar:.2f} W/m²
+
+SOLAR POWER INSIGHTS:
+- Solar radiation levels indicate the potential for solar power generation
+- Higher radiation values (>500 W/m²) are excellent for solar panels
+- Temperature affects solar panel efficiency (optimal around 25°C)
+- Current conditions: {"Excellent" if float(current_solar) > 500 else "Good" if float(current_solar) > 200 else "Poor"} for solar power generation
+
+HOURLY DATA AVAILABLE:
+Times: {len(times)} hours of data
+Temperature range: {min_temp}°C to {max_temp}°C
+Solar radiation data: Available for all hours
+"""
+        return formatted_data
+    except Exception as e:
+        return f"Error formatting weather data: {e}"
 
 # Initialize Azure LLM and embeddings for RAG
 llm = AzureChatOpenAI(
@@ -36,9 +97,34 @@ embeddings = AzureOpenAIEmbeddings(
     api_version="2024-02-01",
 )
 
-# Load and process documents for RAG
-loader = TextLoader("static-faq.txt", encoding="utf-8")
-docs = loader.load()
+# Load and process documents for RAG - now using dynamic weather data
+def create_weather_documents():
+    """Create documents from current weather data"""
+    weather_data = fetch_weather_data()
+    formatted_weather = format_weather_data(weather_data)
+    
+    # Also load static FAQ if it exists
+    static_content = ""
+    try:
+        loader = TextLoader("static-faq.txt", encoding="utf-8")
+        static_docs = loader.load()
+        static_content = "\n".join([doc.page_content for doc in static_docs])
+    except Exception as e:
+        print(f"Could not load static FAQ: {e}")
+    
+    # Combine weather data with static content
+    combined_content = f"{formatted_weather}\n\n{static_content}"
+    
+    # Create document
+    weather_doc = Document(
+        page_content=combined_content,
+        metadata={"source": "weather_api", "timestamp": datetime.now().isoformat()}
+    )
+    
+    return [weather_doc]
+
+# Create dynamic documents
+docs = create_weather_documents()
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=800,
     chunk_overlap=100,
@@ -51,12 +137,12 @@ vector_store = InMemoryVectorStore(embeddings)
 _ = vector_store.add_documents(documents=all_splits)
 
 # Get RAG prompt
-rag_prompt = hub.pull("rlm/rag-prompt")
+# rag_prompt = hub.pull("rlm/rag-prompt")
 
-prompt_template = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful assistant specializing in solar power systems. Use the provided context to answer questions accurately. If the context doesn't contain relevant information, provide a general helpful response."),
-    MessagesPlaceholder(variable_name="messages"),
-])
+# prompt_template = ChatPromptTemplate.from_messages([
+#     ("system", "You are a helpful assistant specializing in solar power systems. Use the provided context to answer questions accurately. If the context doesn't contain relevant information, provide a general helpful response."),
+#     MessagesPlaceholder(variable_name="messages"),
+# ])
 
 model = llm
 
@@ -66,6 +152,20 @@ def call_model(state: MessagesState):
     # Get the latest user message for RAG retrieval
     latest_message = state["messages"][-1].content if state["messages"] else ""
     
+    # Refresh weather data for each query to get latest information
+    fresh_docs = create_weather_documents()
+    fresh_splits = text_splitter.split_documents(fresh_docs)
+    
+    # Update vector store with fresh data
+    try:
+        # Clear existing documents and add fresh ones
+        vector_store = InMemoryVectorStore(embeddings)
+        _ = vector_store.add_documents(documents=fresh_splits)
+    except Exception as e:
+        print(f"Error updating vector store: {e}")
+        # Fallback to existing vector store
+        pass
+    
     # Retrieve relevant documents
     retrieved_docs = vector_store.similarity_search(latest_message, k=3)
     
@@ -73,13 +173,22 @@ def call_model(state: MessagesState):
     context = "\n\n".join(doc.page_content for doc in retrieved_docs)
     
     # Create enhanced system message with context
-    enhanced_system_message = f"""You are a helpful assistant specializing in solar power systems. 
+    enhanced_system_message = f"""You are a helpful assistant specializing in solar power systems and weather analysis. 
+
+You have access to real-time weather data including temperature and solar radiation measurements from Malang, Indonesia region (Latitude -7.9797, Longitude 112.6304).
 
 Use the following context to answer the user's question:
 
 {context}
 
-If the context contains relevant information, use it to provide an accurate answer. If the context doesn't contain relevant information, provide a general helpful response based on your knowledge."""
+Key capabilities:
+- Provide current weather conditions and forecasts
+- Analyze solar radiation levels for solar power generation potential
+- Give advice on solar panel efficiency based on current conditions
+- Answer questions about weather patterns and their impact on solar energy
+- Provide both current readings and daily forecasts
+
+If the user asks about weather, solar conditions, or energy generation, use the real-time data provided. For general solar power questions, use both the weather data and your knowledge to provide comprehensive answers."""
     
     # Convert to proper message format for Azure OpenAI
     formatted_messages = [SystemMessage(content=enhanced_system_message)]
@@ -92,6 +201,8 @@ If the context contains relevant information, use it to provide an accurate answ
     response = model.invoke(formatted_messages)
     return {"messages": [response]}
 
+# Graph structure
+# masih pakai yang dynamic, belum dynamic + static
 workflow.add_edge(START, "model")
 workflow.add_node("model", call_model)
 
