@@ -1,0 +1,65 @@
+===========================================
+📘 FAQ - Panel Surya (Photovoltaic)
+===========================================
+
+❓ Apa itu panel surya (solar panel)?
+✅ Panel surya adalah perangkat yang mengubah energi cahaya matahari menjadi energi listrik menggunakan efek fotovoltaik. Panel ini terdiri dari sel-sel surya (solar cells) yang umumnya terbuat dari silikon.
+
+❓ Apa saja jenis-jenis panel surya yang umum digunakan?
+✅ Tiga jenis utama panel surya:
+   1. Monocrystalline: Efisiensi tinggi, bentuk sel hitam pekat, cocok untuk ruang sempit.
+   2. Polycrystalline: Lebih murah dari mono, efisiensi sedikit lebih rendah.
+   3. Thin-Film: Fleksibel, ringan, efisiensi lebih rendah, cocok untuk aplikasi non-rumah tangga.
+
+❓ Bagaimana cara kerja panel surya?
+✅ Ketika sinar matahari mengenai permukaan sel surya, foton dari cahaya akan membebaskan elektron di dalam bahan semikonduktor. Pergerakan elektron ini menciptakan arus listrik searah (DC).
+
+❓ Apa yang dimaksud dengan efisiensi panel surya?
+✅ Efisiensi menunjukkan seberapa banyak cahaya matahari yang dapat dikonversi menjadi listrik. Misalnya, efisiensi 20% berarti 20% dari energi matahari yang diterima dikonversi menjadi listrik.
+
+❓ Faktor apa saja yang mempengaruhi efisiensi panel surya?
+✅ Faktor utama:
+   - Suhu panel (semakin panas bisa menurunkan efisiensi)
+   - Sudut dan arah pemasangan
+   - Kualitas dan jenis panel
+   - Bayangan (dari pohon, bangunan)
+   - Kebersihan permukaan panel
+
+❓ Bagaimana orientasi dan sudut terbaik untuk pemasangan panel?
+✅ Di Indonesia (dekat ekuator), panel sebaiknya dipasang menghadap ke utara atau selatan dengan kemiringan sekitar 10–15 derajat agar mendapatkan sinar maksimal sepanjang tahun.
+
+❓ Apakah panel surya bisa dipasang di semua jenis atap?
+✅ Sebagian besar atap bisa dipasangi panel, tapi idealnya:
+   - Arah atap mendukung orientasi panel
+   - Miring minimal 10 derajat
+   - Struktur atap kuat dan tidak tertutup bayangan
+
+❓ Apa perbedaan panel surya 100Wp dan 300Wp?
+✅ Wp (Watt peak) menunjukkan kapasitas maksimal output panel dalam kondisi ideal (STC - Standard Test Conditions). Panel 300Wp dapat menghasilkan lebih banyak listrik dibanding 100Wp jika terkena matahari yang sama.
+
+❓ Apakah panel surya perlu perawatan?
+✅ Ya. Perawatan meliputi:
+   - Membersihkan permukaan dari debu, kotoran, atau daun setiap 1–2 bulan sekali
+   - Memastikan tidak ada keretakan atau gangguan koneksi
+   - Pemeriksaan tahunan oleh teknisi
+
+❓ Berapa lama umur pakai panel surya?
+✅ Umumnya 25–30 tahun dengan efisiensi menurun secara bertahap (~0.5% per tahun). Produsen sering memberi garansi performa 25 tahun.
+
+❓ Apakah panel surya masih bisa berfungsi saat mendung?
+✅ Ya, tetapi output-nya akan menurun signifikan karena intensitas cahaya berkurang. Tetap bisa menghasilkan listrik meskipun dalam jumlah kecil.
+
+❓ Apakah panel surya bisa digunakan saat malam hari?
+✅ Tidak. Karena tidak ada sinar matahari di malam hari. Untuk penggunaan malam, perlu ditambah baterai penyimpanan energi.
+
+❓ Apa kelebihan dan kekurangan panel surya?
+✅ Kelebihan:
+   - Energi terbarukan & ramah lingkungan
+   - Biaya operasional rendah
+   - Umur panjang
+
+   Kekurangan:
+   - Biaya awal tinggi
+   - Bergantung pada cuaca
+   - Butuh ruang cukup
+
