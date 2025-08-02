@@ -1,0 +1,46 @@
+# FAQ: Integrasi IoT dalam Sistem Energi Surya
+
+Q1: Apa itu IoT dalam konteks sistem energi surya?
+A1: IoT (Internet of Things) dalam sistem energi surya merujuk pada penggunaan perangkat yang terhubung ke internet untuk memantau, mengontrol, dan mengoptimalkan kinerja panel surya dan komponen pendukungnya secara real-time.
+
+Q2: Apa manfaat utama menggunakan IoT dalam sistem surya?
+A2:
+- Pemantauan konsumsi dan produksi energi secara real-time
+- Deteksi dini kerusakan atau penurunan performa panel
+- Otomatisasi pengalihan sumber daya (misalnya ke baterai saat malam hari)
+- Analisis data untuk peningkatan efisiensi energi
+
+Q3: Perangkat IoT apa saja yang umum digunakan dalam sistem surya?
+A3:
+- Sensor suhu dan intensitas cahaya matahari
+- Smart meter untuk konsumsi energi
+- Modul komunikasi (Wi-Fi, ZigBee, LoRa)
+- Kontroler berbasis microcontroller seperti ESP32 atau Arduino
+
+Q4: Apakah IoT dapat membantu dalam pemeliharaan sistem surya?
+A4: Ya. Dengan IoT, sistem dapat mengirim notifikasi otomatis jika terjadi anomali, overheat, atau kegagalan inverter, sehingga pemeliharaan bisa dilakukan lebih cepat dan efisien.
+
+Q5: Bagaimana cara IoT mengirimkan data?
+A5: Data dikirim melalui protokol komunikasi seperti MQTT, HTTP, atau LoRa ke cloud server atau aplikasi monitoring, lalu ditampilkan dalam bentuk dashboard atau notifikasi.
+
+Q6: Apakah sistem IoT membutuhkan internet 24/7?
+A6: Idealnya, ya, untuk pemantauan jarak jauh. Namun, beberapa sistem IoT bisa menyimpan data secara lokal dan mengirim saat koneksi tersedia (offline caching).
+
+Q7: Apakah sistem IoT dalam panel surya aman?
+A7: Sistem ini bisa aman jika menggunakan enkripsi komunikasi, autentikasi perangkat, dan update firmware secara berkala. Keamanan perlu menjadi prioritas dalam desain IoT.
+
+Q8: Bisakah IoT digunakan dalam skala rumah tangga?
+A8: Sangat bisa. Banyak rumah tangga saat ini mengadopsi sistem surya pintar yang terhubung ke smartphone untuk memantau penggunaan energi, status baterai, dan penghematan listrik.
+
+Q9: Apa tantangan terbesar dalam implementasi IoT untuk energi surya?
+A9:
+- Keterbatasan konektivitas di daerah terpencil
+- Biaya perangkat tambahan
+- Keamanan data
+- Kompleksitas integrasi hardware dan software
+
+Q10: Platform atau bahasa pemrograman apa yang umum digunakan?
+A10:
+- Bahasa: Python, C/C++ (untuk mikrokontroler), JavaScript (untuk dashboard)
+- Platform: Node-RED, Blynk, ThingsBoard, Firebase, AWS IoT, dan Home Assistant
+
