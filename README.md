@@ -1,6 +1,6 @@
 # Solar Power Website
 
-A modern dashboard web application for solar power analytics, built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/) components.
+A modern dashboard web application for solar power analytics, built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/) components. [Front End Repo Link]([https://ui.shadcn.com/](https://github.com/Ramahabir/solar-power-website))
 
 ## Features
 
