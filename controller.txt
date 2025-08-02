@@ -1,0 +1,26 @@
+Q: Apa itu controller dalam sistem tenaga surya?
+A: Controller atau solar charge controller adalah perangkat yang mengatur aliran arus listrik dari panel surya ke baterai dan dari baterai ke beban, guna mencegah overcharging dan overdischarging.
+
+Q: Mengapa controller penting dalam sistem tenaga surya?
+A: Controller menjaga umur baterai dengan mencegah pengisian atau pengosongan yang berlebihan, serta memastikan efisiensi sistem dan keamanan perangkat.
+
+Q: Apa jenis-jenis controller yang umum digunakan?
+A: Terdapat dua jenis utama: PWM (Pulse Width Modulation) dan MPPT (Maximum Power Point Tracking). MPPT lebih efisien dalam menangkap daya maksimum dari panel surya.
+
+Q: Apa perbedaan antara PWM dan MPPT?
+A: PWM hanya menurunkan tegangan panel agar cocok dengan baterai, sementara MPPT mampu mengubah tegangan dan arus agar daya maksimum panel bisa diambil, sehingga lebih efisien.
+
+Q: Bagaimana controller bekerja dalam sistem?
+A: Saat matahari bersinar, panel menghasilkan listrik. Controller mengatur listrik itu masuk ke baterai sesuai kapasitasnya. Jika baterai penuh, controller menghentikan pengisian.
+
+Q: Apa fitur tambahan yang biasa ada pada controller modern?
+A: Beberapa fitur tambahan meliputi proteksi arus pendek, layar LCD, pemantauan jarak jauh, sensor suhu baterai, serta kontrol otomatis lampu DC.
+
+Q: Bagaimana cara memilih controller yang sesuai?
+A: Pilih controller berdasarkan arus maksimal dari panel (dalam Ampere), jenis baterai, serta pertimbangan fitur seperti MPPT jika ingin efisiensi tinggi.
+
+Q: Apakah controller harus selalu digunakan?
+A: Ya, terutama jika sistem menggunakan baterai. Tanpa controller, baterai bisa rusak akibat pengisian berlebih atau pengosongan total.
+
+Q: Apakah controller mempengaruhi efisiensi sistem?
+A: Ya, controller yang tepat (misalnya MPPT) bisa meningkatkan efisiensi sistem secara signifikan, terutama saat kondisi cahaya matahari tidak stabil.
