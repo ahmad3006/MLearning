@@ -1,0 +1,20 @@
+Q: Apa itu inverter?
+A: Inverter adalah perangkat elektronik yang mengubah arus searah (DC) menjadi arus bolak-balik (AC).
+
+Q: Untuk apa inverter digunakan?
+A: Inverter digunakan untuk menjalankan peralatan listrik rumah tangga menggunakan sumber daya DC seperti baterai atau panel surya.
+
+Q: Apa perbedaan inverter off-grid dan on-grid?
+A: Inverter on-grid terhubung ke jaringan listrik PLN, sedangkan off-grid tidak dan biasanya digunakan dengan baterai.
+
+Q: Apakah inverter bisa menghemat listrik?
+A: Inverter sendiri tidak menghemat listrik, namun dapat meningkatkan efisiensi sistem tenaga surya.
+
+Q: Berapa lama umur inverter?
+A: Umumnya 10–15 tahun tergantung pada merek, kondisi lingkungan, dan pemeliharaan.
+
+Q: Apakah inverter bisa digunakan tanpa baterai?
+A: Bisa, jika inverter tersebut adalah tipe on-grid. Off-grid biasanya butuh baterai sebagai sumber energinya.
+
+Q: Bagaimana cara memilih inverter yang tepat?
+A: Sesuaikan dengan kebutuhan daya, tipe sistem (off-grid/on-grid), dan fitur keamanan yang dibutuhkan.
