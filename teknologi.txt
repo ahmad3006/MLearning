@@ -1,0 +1,20 @@
+Q: Teknologi apa yang digunakan dalam sistem PLTS?
+A: Sistem PLTS umumnya menggunakan panel surya fotovoltaik (PV), inverter (untuk mengubah arus searah menjadi arus bolak-balik), dan sistem penyimpanan energi seperti baterai lithium-ion.
+
+Q: Apa perbedaan antara sistem on-grid dan off-grid?
+A: Sistem on-grid terhubung ke jaringan listrik PLN, memungkinkan ekspor-impor energi. Sementara sistem off-grid berdiri sendiri dan memerlukan baterai untuk menyimpan energi karena tidak terhubung ke jaringan umum.
+
+Q: Bagaimana cara kerja panel surya?
+A: Panel surya mengubah sinar matahari menjadi listrik melalui efek fotovoltaik. Energi ini lalu dikonversi oleh inverter menjadi listrik yang bisa digunakan untuk peralatan rumah tangga atau industri.
+
+Q: Apakah PLTS bisa digunakan saat malam hari atau mendung?
+A: Ya, asalkan menggunakan sistem penyimpanan energi (baterai). Namun, efisiensi akan menurun saat mendung. Tanpa baterai, sistem hanya bekerja saat sinar matahari cukup.
+
+Q: Teknologi penyimpanan apa yang paling umum untuk PLTS?
+A: Baterai lithium-ion paling umum karena daya tahan dan efisiensinya. Alternatif lain termasuk baterai lead-acid dan emerging technologies seperti flow battery.
+
+Q: Apa itu MPPT dan fungsinya dalam PLTS?
+A: Maximum Power Point Tracking (MPPT) adalah teknologi dalam inverter yang mengoptimalkan daya keluaran dari panel surya dengan menyesuaikan tegangan dan arus agar sesuai dengan titik daya maksimum.
+
+Q: Apakah sistem PLTS memerlukan perawatan khusus?
+A: Tidak banyak. Umumnya hanya perlu pembersihan panel secara berkala dan pengecekan rutin pada inverter dan sistem baterai untuk memastikan performa optimal.
