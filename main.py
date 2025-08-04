@@ -36,7 +36,7 @@ def predict():
         time = hourly["time"][i]
         ambient_temperature = hourly["temperature_2m"][i]
         irradiance = hourly["shortwave_radiation"][i]
-        module_temp = ambient_temperature + irradiance * 0.03
+        module_temp = ambient_temperature + irradiance * 0.03 # NOCT Prediction
 
         # Prepare model input
         input_vector = [[ambient_temperature, module_temp, irradiance]]

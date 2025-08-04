@@ -12,8 +12,6 @@ from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
-
-
 dotenv.load_dotenv()
 api_key = os.getenv("api_key")
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -34,6 +32,7 @@ def fetch_weather_data():
         print(f"Error fetching weather data: {e}")
         return None
 
+# Change location and hour based on API data
 def format_weather_data(weather_data):
     """Format weather data into readable text for RAG"""
     if not weather_data:
