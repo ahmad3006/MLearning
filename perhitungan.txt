@@ -1,0 +1,77 @@
+Q: Apa saja komponen yang harus dihitung dalam membangun sistem PLTS?
+A: Komponen utama yang perlu dihitung antara lain:
+
+Kapasitas kebutuhan energi harian (Wh)
+
+Kapasitas panel surya yang dibutuhkan (Wp)
+
+Kapasitas baterai (Ah)
+
+Ukuran charge controller (Ampere)
+
+Kapasitas inverter (Watt)
+
+Q: Bagaimana cara menghitung kebutuhan energi harian?
+A: Jumlahkan seluruh konsumsi energi peralatan listrik yang digunakan dalam satu hari. Rumus:
+
+Total Energi Harian (Wh) = Daya Peralatan (Watt) × Lama Pemakaian (jam)
+
+Q: Bagaimana cara menentukan ukuran panel surya?
+A: Gunakan rumus:
+
+Total Daya Panel (Wp) = Total Energi Harian (Wh) / Jam Matahari Efektif per Hari
+
+Contoh: Jika kebutuhan harian 3000 Wh dan rata-rata 5 jam matahari efektif:
+
+3000 Wh / 5 jam = 600 Wp → Gunakan 2 panel 300 Wp.
+
+Q: Apa itu jam matahari efektif?
+A: Jam matahari efektif adalah jumlah rata-rata waktu dalam sehari saat sinar matahari optimal (sekitar 1000 W/m2). Di Indonesia, rata-rata 4–5 jam.
+
+Q: Bagaimana cara menentukan kapasitas baterai?
+A: Rumus:
+
+Kapasitas Baterai (Wh) = Energi Harian × Hari Autonomy / Depth of Discharge (DOD)
+
+Contoh:
+3000 Wh × 2 hari / 0.5 (50%) = 12.000 Wh → 12.000 Wh / 12 V = 1000 Ah
+
+Q: Apa itu DOD (Depth of Discharge)?
+A: Persentase maksimal pengosongan baterai agar tidak rusak. Baterai lead-acid biasanya 50%, lithium bisa hingga 80–90%.
+
+Q: Bagaimana menghitung kapasitas charge controller?
+A: Rumus:
+
+Arus Controller (A) = Total Daya Panel (Wp) / Tegangan Sistem (V)
+
+Tambahkan margin sekitar 25%.
+
+Q: Bagaimana cara menentukan kapasitas inverter?
+A: Inverter harus mampu menangani beban puncak dan beban awal (start-up) peralatan.
+
+Contoh: Total daya alat 1000 W, beban awal 2000 W → gunakan inverter minimal 2000 W.
+
+Q: Apakah perhitungan harus mempertimbangkan efisiensi sistem?
+A: Ya, faktor efisiensi total sistem biasanya 70–80% karena ada rugi-rugi konversi.
+
+Total Energi Real = Total Energi Harian / Efisiensi
+
+Q: Tools atau software apa yang umum digunakan?
+A:
+
+PVsyst
+
+HelioScope
+
+HOMER
+
+Spreadsheet Excel
+
+**Q: Apakah bisa sistem PLTS dibangun tanpa perhitungan?
+A: Tidak disarankan. Tanpa perhitungan yang benar, sistem bisa kelebihan biaya atau gagal memenuhi kebutuhan listrik.
+
+Q: Apakah saya bisa berkonsultasi untuk perhitungan sistem?
+A: Tentu. Bisa melalui teknisi energi terbarukan, dosen pembimbing, atau komunitas seperti Society of Renewable Energy (SRE).
+
+Q: Apakah perhitungan untuk PLTS on-grid dan off-grid berbeda?
+A: Ya. Sistem off-grid butuh baterai dan perhitungan backup, sedangkan on-grid bisa dikompensasikan dengan jaringan PLN.
