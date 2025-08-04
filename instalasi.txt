@@ -1,0 +1,20 @@
+Q: Apa saja tahapan utama dalam instalasi sistem PLTS?
+A: Tahapan utama meliputi survei lokasi, perencanaan sistem, pemasangan struktur penyangga, pemasangan panel surya, instalasi inverter dan sistem kelistrikan, pengujian sistem, serta aktivasi dan monitoring awal.
+
+Q: Apa yang harus diperhatikan saat memilih lokasi instalasi panel surya?
+A: Lokasi harus memiliki paparan sinar matahari langsung minimal 4-5 jam per hari, bebas dari bayangan pohon atau bangunan tinggi, serta memiliki struktur atap atau tanah yang kokoh.
+
+Q: Siapa yang boleh melakukan instalasi sistem PLTS?
+A: Instalasi sebaiknya dilakukan oleh teknisi bersertifikat atau instalatur profesional yang memahami standar keselamatan dan prosedur kelistrikan.
+
+Q: Berapa lama waktu yang dibutuhkan untuk instalasi sistem PLTS skala rumah tangga?
+A: Biasanya antara 1 hingga 3 hari tergantung pada kompleksitas sistem dan kondisi lokasi instalasi.
+
+Q: Apa risiko umum selama proses instalasi?
+A: Risiko meliputi cedera akibat jatuh, kesalahan wiring, kerusakan panel, hingga risiko kelistrikan jika instalasi tidak sesuai standar.
+
+Q: Apakah instalasi sistem PLTS memerlukan izin?
+A: Ya, biasanya perlu izin dari pemerintah daerah dan terkadang izin dari PLN atau otoritas setempat, tergantung skala dan jenis sistem.
+
+Q: Apakah sistem bisa langsung digunakan setelah instalasi?
+A: Setelah instalasi selesai, sistem harus melalui pengujian dan aktivasi. Bila semua berjalan baik, sistem bisa langsung digunakan.

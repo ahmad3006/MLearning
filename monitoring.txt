@@ -1,0 +1,20 @@
+Q: Apa itu monitoring dalam sistem PLTS?
+A: Monitoring adalah proses pemantauan performa sistem PLTS secara real-time untuk memastikan produksi energi berjalan optimal dan mendeteksi gangguan atau penurunan efisiensi.
+
+Q: Bagaimana cara melakukan monitoring sistem PLTS?
+A: Monitoring dapat dilakukan melalui aplikasi atau dashboard online yang terhubung dengan inverter atau smart meter, yang menyajikan data seperti output energi, iradiasi matahari, dan status sistem.
+
+Q: Apa manfaat dari monitoring sistem PLTS?
+A: Manfaatnya meliputi deteksi dini kerusakan, pengukuran efisiensi, evaluasi performa panel, serta membantu perawatan dan pengambilan keputusan teknis.
+
+Q: Apakah monitoring bisa dilakukan dari jarak jauh?
+A: Ya, dengan menggunakan sistem monitoring berbasis IoT atau cloud, pengguna dapat memantau performa PLTS dari smartphone atau komputer kapan saja.
+
+Q: Apa indikator umum yang dimonitor dalam sistem PLTS?
+A: Indikator meliputi daya output (Watt), tegangan dan arus, total energi harian/bulanan, suhu panel, serta status error jika terjadi gangguan.
+
+Q: Apa yang harus dilakukan jika sistem menunjukkan performa di bawah normal?
+A: Lakukan pemeriksaan awal terhadap kabel, panel, inverter, dan pastikan tidak ada bayangan atau kotoran pada panel. Jika tidak ada hasil, hubungi teknisi untuk analisis lebih lanjut.
+
+Q: Apakah sistem monitoring perlu koneksi internet?
+A: Ya, sebagian besar sistem modern membutuhkan koneksi internet untuk mengirim data performa ke server monitoring dan menampilkannya dalam aplikasi.
