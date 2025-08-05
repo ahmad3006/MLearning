@@ -1,0 +1,56 @@
+# Perawatan & Troubleshooting PLTS
+
+Sistem PLTS (Pembangkit Listrik Tenaga Surya) membutuhkan perawatan agar tetap bekerja secara optimal dan efisien selama bertahun-tahun. Berikut panduan perawatan serta troubleshooting umum:
+
+## Perawatan Rutin
+
+1. **Pembersihan Panel Surya**
+   - Bersihkan panel dari debu, daun, kotoran burung, dan kotoran lainnya minimal sebulan sekali.
+   - Gunakan air bersih dan lap halus atau spons, hindari deterjen keras.
+
+2. **Pemeriksaan Kabel dan Koneksi**
+   - Periksa sambungan kabel setiap 6 bulan.
+   - Pastikan tidak ada kabel longgar, terkelupas, atau berkarat.
+
+3. **Pemeriksaan Inverter**
+   - Cek tampilan indikator/inverter apakah menunjukkan status normal atau error.
+   - Pastikan sistem tidak sering restart atau menunjukkan error berulang.
+
+4. **Pengecekan Baterai (jika ada)**
+   - Monitor level pengisian daya dan kesehatan baterai.
+   - Bersihkan terminal baterai dari korosi.
+
+5. **Monitoring Output Energi**
+   - Pantau output harian menggunakan monitoring app atau meter energi.
+   - Catat performa untuk melihat jika terjadi penurunan tajam.
+
+---
+
+## Troubleshooting Umum
+
+1. **Output Energi Rendah**
+   - Cek apakah panel tertutup debu atau bayangan.
+   - Pastikan inverter dan sistem berjalan normal.
+
+2. **Inverter Tidak Menyala**
+   - Periksa koneksi ke baterai dan PV.
+   - Cek MCB (Miniature Circuit Breaker), bisa jadi trip.
+
+3. **Baterai Tidak Mengisi**
+   - Periksa kabel dari panel ke charge controller.
+   - Cek apakah charge controller menunjukkan status error.
+
+4. **Sistem Mati Saat Malam**
+   - Ini normal jika sistem tidak memiliki baterai atau sistem hybrid.
+
+5. **Aplikasi Monitoring Tidak Sinkron**
+   - Pastikan koneksi WiFi/Modem stabil.
+   - Restart sistem monitoring atau cek pengaturan jaringan.
+
+---
+
+## Tips Tambahan
+- Gunakan jasa teknisi profesional setahun sekali untuk pemeriksaan menyeluruh.
+- Simpan log aktivitas perawatan untuk referensi masa depan.
+- Jika terjadi error berulang, jangan ragu konsultasi dengan penyedia sistem.
+
