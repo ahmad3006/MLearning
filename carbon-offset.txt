@@ -1,0 +1,30 @@
+PLTS sebagai Solusi Carbon Offset yang Efektif
+=============================================
+
+1. Apa itu Carbon Offset?
+--------------------------
+Carbon offset adalah upaya untuk mengimbangi emisi gas rumah kaca yang dihasilkan suatu aktivitas dengan mendanai proyek-proyek yang mengurangi emisi di tempat lain. Misalnya, menanam pohon, proyek biogas, hingga pembangunan pembangkit energi terbarukan seperti PLTS.
+
+2. Mengapa PLTS Efektif untuk Carbon Offset?
+--------------------------------------------
+- Menghasilkan listrik tanpa emisi karbon langsung
+- Mengurangi ketergantungan terhadap PLTU batubara
+- Cocok untuk diterapkan dalam skala kecil (rumah tangga) hingga besar (industri)
+- Memberikan nilai tambah ekonomi dan reputasi hijau bagi perusahaan
+
+3. Skema dan Sertifikasi
+------------------------
+- Carbon offset dari PLTS dapat dijual dalam bentuk *Renewable Energy Certificate (REC)* atau *Verified Carbon Standard (VCS)*
+- Perusahaan dapat membeli REC dari instalasi PLTS untuk mengimbangi emisi mereka
+- Tersedia platform internasional dan lokal (seperti APX, Gold Standard, atau Sistem Registri Karbon OJK)
+
+4. Potensi di Indonesia
+------------------------
+- Indonesia memiliki potensi 200 GW dari PLTS namun baru dimanfaatkan sebagian kecil
+- Perusahaan yang memasang PLTS dan mencatat pengurangan emisi bisa menjualnya sebagai kredit karbon
+- Peluang bisnis karbon offset berbasis PLTS masih terbuka luas, terutama untuk ekspor ke pasar Eropa dan Jepang
+
+5. Studi Kasus Sukses
+---------------------
+- PT X Indonesia berhasil menjual kredit karbon dari PLTS 10 MW mereka ke perusahaan Jepang melalui mekanisme Joint Crediting Mechanism (JCM)
+- Startup energi lokal memanfaatkan PLTS atap untuk menawarkan carbon credit berbasis blockchain
