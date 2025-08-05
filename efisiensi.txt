@@ -1,0 +1,19 @@
+❓ FAQ: Optimasi & Efisiensi Sistem PLTS
+1. Apa yang dimaksud dengan efisiensi sistem PLTS?
+Efisiensi sistem PLTS adalah seberapa besar energi matahari yang berhasil dikonversi menjadi energi listrik yang bisa digunakan. Hal ini mencakup efisiensi panel surya, inverter, kabel, serta perilaku penggunaan energi oleh pemilik sistem.
+
+2. Apakah sudut pemasangan panel benar-benar memengaruhi efisiensi?
+Ya, sudut kemiringan dan arah hadap panel sangat penting. Di Indonesia, sudut optimal umumnya antara 10°–15° dengan arah hadap ke utara untuk hasil terbaik sepanjang tahun.
+
+3. Apa itu MPPT dan mengapa penting dalam sistem PLTS?
+MPPT (Maximum Power Point Tracking) adalah fitur pada charge controller atau inverter yang menyesuaikan tegangan dan arus secara otomatis agar panel bekerja pada titik daya maksimum. Ini bisa meningkatkan efisiensi hingga 20–30% dibanding sistem tanpa MPPT.
+
+4. Apakah bayangan (shading) kecil bisa berdampak besar?
+Iya, bahkan bayangan kecil dari ranting pohon atau tiang bisa menurunkan output seluruh panel, terutama jika panel disusun seri. Sistem PLTS sangat sensitif terhadap shading.
+
+5. Bagaimana cara sederhana meningkatkan efisiensi tanpa upgrade alat?
+
+- Bersihkan panel secara rutin dari debu atau kotoran.
+- Gunakan alat elektronik hemat energi.
+- Gunakan listrik saat matahari sedang kuat (jam 10 pagi – 2 siang).
+- Kurangi penggunaan alat listrik berat di malam hari.
