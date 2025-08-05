@@ -1,0 +1,39 @@
+# Perizinan & Regulasi di Indonesia
+
+Sebelum membangun sistem Pembangkit Listrik Tenaga Surya (PLTS), penting untuk memahami aspek legalitas dan perizinan yang berlaku di Indonesia. Perizinan ini bertujuan untuk memastikan keamanan, kepatuhan terhadap regulasi energi nasional, serta integrasi yang baik dengan sistem kelistrikan PLN.
+
+## 1. Aturan Dasar
+
+- **Permen ESDM No. 26 Tahun 2021**: Mengatur tentang PLTS Atap yang terhubung dengan jaringan PLN.
+- **SLO (Sertifikat Laik Operasi)**: Wajib untuk instalasi sistem PLTS >500 VA.
+- **Perizinan Berusaha**: Diperlukan untuk proyek PLTS skala besar atau komersial.
+
+## 2. Proses Perizinan
+
+1. **Pendaftaran Sistem PLTS**
+   - Melalui sistem OSS (Online Single Submission)
+   - Dokumen: desain sistem, perhitungan kapasitas, identitas pemilik, IMB, dll
+
+2. **Koordinasi dengan PLN**
+   - PLN akan mengevaluasi potensi ekspor-impor daya
+   - Perlu pemasangan *meter ekspor-impor* oleh PLN
+
+3. **Pemeriksaan Teknis**
+   - Dilakukan oleh lembaga inspeksi teknis
+   - Tujuannya memastikan sistem aman dan sesuai standar nasional
+
+4. **Penerbitan SLO**
+   - Setelah sistem dinyatakan layak operasi
+   - Sertifikat ini menjadi syarat mutlak untuk mengoperasikan PLTS
+
+## 3. Legalitas dan Integrasi PLN
+
+- Sistem PLTS dapat dijalankan bersama listrik PLN (on-grid)
+- Maksimum kapasitas PLTS Atap: 100% dari daya tersambung (rumah tangga)
+- Harus melaporkan produksi dan konsumsi listrik secara berkala ke PLN
+
+## 4. Tantangan dan Tips
+
+- Proses birokrasi bisa memakan waktu – siapkan semua dokumen sejak awal
+- Gunakan jasa konsultan atau EPC (Engineering, Procurement, and Construction) berpengalaman
+- Pahami kebijakan daerah karena bisa berbeda antar wilayah
