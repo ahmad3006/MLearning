@@ -1,0 +1,42 @@
+Studi Kasus Implementasi PLTS di Indonesia
+==========================================
+
+1. Pondok Pesantren Al-Ittifaq, Bandung
+---------------------------------------
+Deskripsi: Pondok pesantren ini memasang sistem PLTS rooftop berkapasitas 15 kWp.
+Manfaat:
+- Menurunkan tagihan listrik hingga 50%
+- Memberikan edukasi langsung kepada santri mengenai energi terbarukan
+- Mendukung ketahanan energi mandiri pesantren
+
+2. Rumah Sakit Umum Daerah (RSUD) Bali Mandara
+----------------------------------------------
+Deskripsi: RSUD ini memasang PLTS hybrid untuk mengurangi ketergantungan pada PLN.
+Manfaat:
+- Memastikan pasokan listrik tetap stabil untuk alat-alat medis
+- Menghemat pengeluaran listrik rumah sakit
+- Mendukung citra rumah sakit ramah lingkungan
+
+3. Desa Kamanggih, Sumba Timur
+------------------------------
+Deskripsi: Desa terpencil yang kini terang benderang berkat PLTS off-grid.
+Manfaat:
+- Warga bisa belajar dan beraktivitas pada malam hari
+- Meningkatkan produktivitas UMKM desa
+- Menurunkan ketergantungan pada genset berbahan bakar solar
+
+4. Bandara Internasional Soekarno-Hatta
+---------------------------------------
+Deskripsi: Terminal 3 menggunakan PLTS rooftop sebagai bagian dari green airport initiative.
+Manfaat:
+- Mengurangi emisi karbon bandara
+- Memberikan citra hijau di kancah internasional
+- Menghemat konsumsi energi dari grid
+
+5. PT XYZ Industri Otomotif (nama disamarkan)
+---------------------------------------------
+Deskripsi: Perusahaan otomotif di Bekasi memasang PLTS 1 MWp untuk kebutuhan pabrik.
+Manfaat:
+- Menurunkan biaya listrik operasional pabrik
+- Mendukung target ESG (Environmental, Social, Governance)
+- Menjadi benchmark bagi industri manufaktur lain
