@@ -1,0 +1,20 @@
+Mitos & Fakta Energi Surya
+==========================
+
+1. Mitos: PLTS hanya bisa digunakan saat cuaca cerah.
+   Fakta: PLTS tetap bisa menghasilkan listrik saat mendung, meskipun daya yang dihasilkan lebih rendah. Selama masih ada cahaya, panel tetap bekerja.
+
+2. Mitos: Panel surya tidak bisa digunakan saat hujan.
+   Fakta: Hujan justru membantu membersihkan permukaan panel dari debu, meningkatkan efisiensi.
+
+3. Mitos: Biaya pemasangan PLTS terlalu mahal dan tidak menguntungkan.
+   Fakta: Biaya awal memang tinggi, namun efisiensi jangka panjang dan penghematan tagihan listrik membuatnya ekonomis dalam jangka panjang.
+
+4. Mitos: Energi surya tidak cukup kuat untuk kebutuhan industri.
+   Fakta: Banyak industri kini memakai PLTS sebagai sumber utama atau tambahan untuk mengurangi biaya listrik dan jejak karbon.
+
+5. Mitos: Panel surya butuh perawatan rumit dan mahal.
+   Fakta: Perawatan panel cukup mudah, seperti membersihkan debu dan memeriksa kabel secara berkala. Biayanya rendah dibandingkan dengan manfaatnya.
+
+6. Mitos: PLTS tidak ramah lingkungan karena limbah panel.
+   Fakta: Panel surya memiliki masa pakai 20–30 tahun dan sebagian besar komponennya bisa didaur ulang.
