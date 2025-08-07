@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import requests
 import joblib
-from chatbot import chat_with_bot
+# from chatbot import chat_with_bot
 import requests
 
 app = FastAPI()
@@ -17,8 +17,7 @@ app.add_middleware(
 
 # Load your model once at startup
 model = joblib.load("solar_power_prediction.pkl")
-
-
+ 
 @app.get("/predict")
 def predict():
     url = "https://api.open-meteo.com/v1/forecast?latitude=-7.9797&longitude=112.6304&hourly=temperature_2m,shortwave_radiation&timezone=auto&forecast_days=1"
@@ -53,33 +52,33 @@ def predict():
 
     return {"data": results, "total_energy": round(total_energy, 2)}
 
-@app.post("/chat")
-async def chat(request: Request):
-    try:
-        # Check if request has content
-        body_bytes = await request.body()
-        if not body_bytes:
-            return {"error": "Request body is empty"}
+# @app.post("/chat")
+# async def chat(request: Request):
+#     try:
+#         # Check if request has content
+#         body_bytes = await request.body()
+#         if not body_bytes:
+#             return {"error": "Request body is empty"}
         
-        # Parse JSON
-        import json
-        body = json.loads(body_bytes.decode('utf-8'))
-    except json.JSONDecodeError as e:
-        return {"error": "Invalid JSON in request body", "details": str(e)}
-    except Exception as e:
-        return {"error": "Failed to process request body", "details": str(e)}
+#         # Parse JSON
+#         import json
+#         body = json.loads(body_bytes.decode('utf-8'))
+#     except json.JSONDecodeError as e:
+#         return {"error": "Invalid JSON in request body", "details": str(e)}
+#     except Exception as e:
+#         return {"error": "Failed to process request body", "details": str(e)}
     
-    message = body.get("message")
-    session_id = body.get("session_id")  # Optional session ID
+#     message = body.get("message")
+#     session_id = body.get("session_id")  # Optional session ID
     
-    if not message:
-        return {"error": "Message field is required"}
+#     if not message:
+#         return {"error": "Message field is required"}
     
-    if not isinstance(message, str):
-        return {"error": "Message must be a string"}
+#     if not isinstance(message, str):
+#         return {"error": "Message must be a string"}
 
-    try:
-        response = chat_with_bot(message, session_id)
-        return response  # This now includes both response and session_id
-    except Exception as e:
-        return {"error": "Error processing chat request", "details": str(e)}
+#     try:
+#         response = chat_with_bot(message, session_id)
+#         return response  # This now includes both response and session_id
+#     except Exception as e:
+#         return {"error": "Error processing chat request", "details": str(e)}
