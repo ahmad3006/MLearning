@@ -1,0 +1,20 @@
+Q: Apakah PLTS membutuhkan perawatan rutin?
+A: Ya. Perawatan ringan seperti pembersihan panel dari debu atau kotoran dilakukan secara berkala untuk menjaga efisiensi sistem.
+
+Q: Seberapa sering panel surya harus dibersihkan?
+A: Disarankan setiap 1–3 bulan sekali, tergantung kondisi lingkungan seperti banyaknya debu, polusi, atau daun yang jatuh di atas panel.
+
+Q: Apa yang terjadi jika panel surya kotor?
+A: Efisiensi penyerapan sinar matahari menurun, sehingga daya listrik yang dihasilkan juga berkurang.
+
+Q: Apakah inverter juga perlu diperiksa secara berkala?
+A: Ya. Inverter perlu diperiksa minimal setiap tahun untuk memastikan tidak ada kerusakan pada sistem konversi DC ke AC.
+
+Q: Siapa yang bisa melakukan perawatan PLTS?
+A: Pemilik bisa melakukan pembersihan dasar sendiri. Namun, pemeriksaan teknis disarankan dilakukan oleh teknisi bersertifikat untuk keamanan dan akurasi.
+
+Q: Berapa biaya perawatan PLTS?
+A: Biaya cukup rendah. Untuk sistem rumah tangga, umumnya hanya memerlukan pembersihan dan inspeksi tahunan dengan biaya relatif terjangkau.
+
+Q: Apakah perawatan PLTS berbeda untuk sistem on-grid dan off-grid?
+A: Prinsip dasarnya sama, namun sistem off-grid yang menggunakan baterai membutuhkan perhatian lebih pada kondisi dan umur baterai.

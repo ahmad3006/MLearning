@@ -1,0 +1,20 @@
+Q: Apa tujuan dari kurikulum edukasi PLTS?
+A: Tujuannya untuk memberikan pemahaman menyeluruh tentang teknologi Pembangkit Listrik Tenaga Surya, mulai dari konsep dasar hingga penerapannya dalam kehidupan nyata.
+
+Q: Materi apa saja yang termasuk dalam kurikulum PLTS?
+A: Materinya meliputi: dasar energi terbarukan, prinsip kerja panel surya, sistem kelistrikan (DC dan AC), komponen PLTS (panel, baterai, inverter, controller), proses instalasi, monitoring, serta aspek ekonomi dan lingkungan.
+
+Q: Apakah kurikulum ini cocok untuk pelajar atau umum?
+A: Kurikulum dirancang fleksibel, dapat digunakan untuk pelajar tingkat SMA/SMK, mahasiswa, maupun masyarakat umum yang ingin belajar energi surya.
+
+Q: Apakah tersedia praktik langsung?
+A: Ya. Kurikulum dilengkapi dengan modul praktik seperti simulasi instalasi PLTS mini, pengukuran intensitas cahaya, dan perhitungan daya.
+
+Q: Apakah materi disesuaikan dengan standar nasional?
+A: Ya, materi disusun berdasarkan acuan dari standar nasional dan internasional seperti SKKNI dan IEC, serta dapat diadaptasi sesuai kebutuhan lokal.
+
+Q: Apakah tersedia penilaian dalam kurikulum?
+A: Tersedia pre-test, post-test, dan evaluasi akhir berupa proyek instalasi mini PLTS atau pembuatan proposal sistem PLTS.
+
+Q: Apa manfaat mempelajari kurikulum PLTS?
+A: Memberikan bekal teknis dan pemahaman lingkungan, serta membuka peluang karier di bidang energi terbarukan yang sedang berkembang pesat.
