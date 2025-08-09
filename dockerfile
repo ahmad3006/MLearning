@@ -15,16 +15,18 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Create minimal requirements for current functionality
+# Copy requirements file
 COPY requirements.txt .
 
-# Install only necessary Python dependencies
+# Install Python dependencies from requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir fastapi uvicorn requests joblib scikit-learn numpy
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
+COPY chatbotengine.py .
 COPY main.py .
 COPY solar_power_prediction.pkl .
+COPY .env .
 
 # Create non-root user for security
 RUN adduser --disabled-password --gecos '' appuser && \
