@@ -9,6 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
 
+
 # Install system dependencies (required for scikit-learn and joblib)
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -26,7 +27,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY chatbotengine.py .
 COPY main.py .
 COPY solar_power_prediction.pkl .
-COPY .env .
 
 # Create non-root user for security
 RUN adduser --disabled-password --gecos '' appuser && \

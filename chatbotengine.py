@@ -77,18 +77,12 @@ Solar radiation data: Available for all hours
 
 # Initialize Azure LLM and embeddings for RAG
 model = AzureChatOpenAI(
-    azure_endpoint=os.getenv("azure_gpt-3.5"),
+    azure_endpoint=os.getenv("AZURE_3_5"),
     azure_deployment="gpt-35-turbo",
-    api_key=os.getenv("azure_key"),
+    api_key=os.getenv("AZURE_KEY"),
     api_version="2024-12-01-preview",
 )
 
-embeddings = AzureOpenAIEmbeddings(
-    azure_endpoint=os.getenv("azure_embed_url"),
-    azure_deployment="text-embedding-3-small",
-    api_key=os.getenv("azure_key"),
-    api_version="2024-02-01",
-)
 
 # 1. Weather context node
 def add_weather_context(state: MessagesState) -> MessagesState:
