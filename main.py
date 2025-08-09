@@ -1,23 +1,39 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import Optional
+from langchain_core.messages import HumanMessage
 import requests
 import joblib
-# from chatbot import chat_with_bot
-import requests
+from chatbotengine import chatbot_app  # updated import
 
 app = FastAPI()
 
-# Allow frontend access (adjust as needed)
+# Allow frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Or restrict to your frontend domain
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load your model once at startup
+# Load prediction model
 model = joblib.load("solar_power_prediction.pkl")
- 
+
+# Request body model
+class ChatRequest(BaseModel):
+    message: str
+    thread_id: Optional[str] = "default_thread"
+
+@app.post("/chat")
+def run_chatbot(request: ChatRequest):
+    config = {"configurable": {"thread_id": request.thread_id}}
+    input_messages = [HumanMessage(content=request.message)]
+    
+    response_state = chatbot_app.invoke({"messages": input_messages}, config)
+    return {"thread_id": request.thread_id, "response": response_state["messages"][-1].content}
+
+
 @app.get("/predict")
 def predict():
     url = "https://api.open-meteo.com/v1/forecast?latitude=-7.9797&longitude=112.6304&hourly=temperature_2m,shortwave_radiation&timezone=auto&forecast_days=1"
@@ -40,7 +56,7 @@ def predict():
         # Prepare model input
         input_vector = [[ambient_temperature, module_temp, irradiance]]
         predicted_power = model.predict(input_vector)[0]
-        total_energy = sum(row["predicted_power"] for row in results)
+        
         # Save results
         results.append({
             "time": time,
@@ -50,35 +66,6 @@ def predict():
             "predicted_power": round(predicted_power, 2)
         })
 
+    # Calculate total energy after all results are collected
+    total_energy = sum(row["predicted_power"] for row in results)
     return {"data": results, "total_energy": round(total_energy, 2)}
-
-# @app.post("/chat")
-# async def chat(request: Request):
-#     try:
-#         # Check if request has content
-#         body_bytes = await request.body()
-#         if not body_bytes:
-#             return {"error": "Request body is empty"}
-        
-#         # Parse JSON
-#         import json
-#         body = json.loads(body_bytes.decode('utf-8'))
-#     except json.JSONDecodeError as e:
-#         return {"error": "Invalid JSON in request body", "details": str(e)}
-#     except Exception as e:
-#         return {"error": "Failed to process request body", "details": str(e)}
-    
-#     message = body.get("message")
-#     session_id = body.get("session_id")  # Optional session ID
-    
-#     if not message:
-#         return {"error": "Message field is required"}
-    
-#     if not isinstance(message, str):
-#         return {"error": "Message must be a string"}
-
-#     try:
-#         response = chat_with_bot(message, session_id)
-#         return response  # This now includes both response and session_id
-#     except Exception as e:
-#         return {"error": "Error processing chat request", "details": str(e)}

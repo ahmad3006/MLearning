@@ -4,12 +4,14 @@ import requests
 from datetime import datetime
 from langchain_openai import AzureChatOpenAI
 from langchain_openai import AzureOpenAIEmbeddings
-from langchain_core.messages import HumanMessage,AIMessage
-from langgraph.checkpoint.postgres import PostgresSaver
+from langchain_core.messages import SystemMessage
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import START,MessagesState, StateGraph, END
+
 
 dotenv.load_dotenv()
 api_key = os.getenv("api_key")
-DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Weather API configuration
 WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast?latitude=-7.9797&longitude=112.6304&hourly=temperature_2m,shortwave_radiation&timezone=auto&forecast_days=1"
@@ -88,46 +90,38 @@ embeddings = AzureOpenAIEmbeddings(
     api_version="2024-02-01",
 )
 
-# model.invoke(
-#     [
-#         HumanMessage(content="Hi! I'm Bob"),
-#         AIMessage(content="Hello Bob! How can I assist you today?"),
-#         HumanMessage(content="What's my name?"),
-#     ]
-# )
+# 1. Weather context node
+def add_weather_context(state: MessagesState) -> MessagesState:
+    weather_data = fetch_weather_data()
+    formatted_weather = format_weather_data(weather_data)
+    
+    # Insert as a system message at the start
+    state["messages"].insert(
+        0,
+        SystemMessage(content=f"Current weather data:\n{formatted_weather}")
+    )
+    return state
 
-from langgraph.graph import START,MessagesState, StateGraph
+# 2. Model call node
+def call_model(state: MessagesState) -> MessagesState:
+    # Append the model's reply instead of overwriting the list
+    response = model.invoke(state["messages"])
+    state["messages"].append(response)
+    return state
 
-# Memory Persistence
-with PostgresSaver.from_conn_string(DATABASE_URL) as checkpointer:
-    # checkpointer.setup()
+# 3. Build the graph
+graph = StateGraph(MessagesState)
 
-    def call_model(state: MessagesState):
-        response = model.invoke(state["messages"])
-        return {"messages": response}
+# Add nodes
+graph.add_node("add_weather", add_weather_context)
+graph.add_node("model", call_model)
 
-    builder = StateGraph(MessagesState)
-    builder.add_node(call_model)
-    builder.add_edge(START, "call_model")
+# Define flow: START → add_weather → model → END
+graph.add_edge(START, "add_weather")
+graph.add_edge("add_weather", "model")
+graph.add_edge("model", END)
 
-    graph = builder.compile(checkpointer=checkpointer)
+# Compile with memory
+memory = MemorySaver()
+chatbot_app = graph.compile(checkpointer=memory)
 
-    config = {
-        "configurable": {
-            "thread_id": "1"
-        }
-    }
-
-    # for chunk in graph.stream(
-    #     {"messages": [{"role": "user", "content": "hi! I'm bob"}]},
-    #     config,
-    #     stream_mode="values"
-    # ):
-    #     chunk["messages"][-1].pretty_print()
-
-    for chunk in graph.stream(
-        {"messages": [{"role": "user", "content": "what's my name?"}]},
-        config,
-        stream_mode="values"
-    ):
-        chunk["messages"][-1].pretty_print()
