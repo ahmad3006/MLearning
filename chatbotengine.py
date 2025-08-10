@@ -2,8 +2,7 @@ import os
 import dotenv
 import requests
 from datetime import datetime
-from langchain_openai import AzureChatOpenAI
-from langchain_openai import AzureOpenAIEmbeddings
+from langchain.chat_models import init_chat_model 
 from langchain_core.messages import SystemMessage
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import START,MessagesState, StateGraph, END
@@ -11,6 +10,7 @@ from langgraph.graph import START,MessagesState, StateGraph, END
 
 dotenv.load_dotenv()
 api_key = os.getenv("api_key")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 # DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Weather API configuration
@@ -76,13 +76,9 @@ Solar radiation data: Available for all hours
         return f"Error formatting weather data: {e}"
 
 # Initialize Azure LLM and embeddings for RAG
-model = AzureChatOpenAI(
-    azure_endpoint=os.getenv("AZURE_3_5"),
-    azure_deployment="gpt-35-turbo",
-    api_key=os.getenv("AZURE_KEY"),
-    api_version="2024-12-01-preview",
-)
 
+
+model = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
 
 # 1. Weather context node
 def add_weather_context(state: MessagesState) -> MessagesState:
